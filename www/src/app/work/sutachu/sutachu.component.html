@@ -1,0 +1,56 @@
+<div>
+  <!-- うどん -->
+  <ng-container *ngIf="special === 'udon'">
+    <img style="position: absolute" src="/assets/udon.png" />
+    <ng-container *ngIf="state.tail === 'tail'">
+      <img style="position: absolute" src="/assets/front-tail.png" />
+    </ng-container>
+    <ng-container *ngIf="state.tail === 'wrongtail'">
+      <img style="position: absolute" src="/assets/rear-tail.png" />
+    </ng-container>
+  </ng-container>
+  <!-- ほんもののすたちゅー -->
+  <ng-container *ngIf="special === 'nature'">
+    <ng-container *ngIf="state.prone; else elseBlock">
+      <img style="position: absolute" src="/assets/rear-body.png" />
+      <img style="position: absolute" src="/assets/rear-tail.png" />
+      <ng-container *ngIf="state.tail === 'tail'">
+        <img style="position: absolute; left: 20px" src="/assets/rear-tail.png" />
+      </ng-container>
+      <ng-container *ngIf="state.tail === 'wrongtail'">
+        <img style="position: absolute; left: -90px" src="/assets/front-tail.png" />
+      </ng-container>
+    </ng-container>
+    <ng-template #elseBlock>
+      <img style="position: absolute" src="/assets/front-body.png" />
+      <img style="position: absolute" src="/assets/front-tail.png" />
+      <ng-container *ngIf="state.tail === 'tail'">
+        <img style="position: absolute; top: -15px" src="/assets/front-tail.png" />
+      </ng-container>
+      <ng-container *ngIf="state.tail === 'wrongtail'">
+        <img style="position: absolute; top: -15px" src="/assets/rear-tail.png" />
+      </ng-container>
+    </ng-template>
+  </ng-container>
+  <!-- ふつうの -->
+  <ng-container *ngIf="special === ''">
+    <ng-container *ngIf="state.prone; else elseBlock">
+      <img style="position: absolute" src="/assets/rear-body.png" />
+      <ng-container *ngIf="state.tail === 'tail'">
+        <img style="position: absolute" src="/assets/rear-tail.png" />
+      </ng-container>
+      <ng-container *ngIf="state.tail === 'wrongtail'">
+        <img style="position: absolute; left: -90px" src="/assets/front-tail.png" />
+      </ng-container>
+    </ng-container>
+    <ng-template #elseBlock>
+      <img style="position: absolute" src="/assets/front-body.png" />
+      <ng-container *ngIf="state.tail === 'tail'">
+        <img style="position: absolute" src="/assets/front-tail.png" />
+      </ng-container>
+      <ng-container *ngIf="state.tail === 'wrongtail'">
+        <img style="position: absolute" src="/assets/rear-tail.png" />
+      </ng-container>
+    </ng-template>
+  </ng-container>
+</div>

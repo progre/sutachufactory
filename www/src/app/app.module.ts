@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { WorkComponent } from './work/work.component';
 import { ProductionLineComponent } from './work/production-line/production-line.component';
+import { SutachuComponent } from './work/sutachu/sutachu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     WorkComponent,
-    ProductionLineComponent
+    ProductionLineComponent,
+    SutachuComponent
   ],
   imports: [
     BrowserModule,
