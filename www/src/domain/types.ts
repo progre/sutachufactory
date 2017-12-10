@@ -1,3 +1,8 @@
+export interface Manufacture {
+  readonly figure: Figure;
+  readonly operation: Operation;
+}
+
 export interface Figure {
   readonly id: string;
   readonly prone: boolean;

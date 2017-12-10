@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  Action,
+  Figure,
+  Manufacture,
+  Operation,
+  Special
+} from '../../domain/types';
 
 @Component({
   selector: 'app-work',
@@ -6,10 +13,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./work.component.css']
 })
 export class WorkComponent implements OnInit {
-
-  constructor() { }
+  private beforeManufacturing: Manufacture
 
   ngOnInit() {
   }
-
 }

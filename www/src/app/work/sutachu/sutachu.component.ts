@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges
+} from '@angular/core';
 import { Action, Figure, Operation, Special } from '../../../domain/types';
 
 @Component({
@@ -6,13 +12,13 @@ import { Action, Figure, Operation, Special } from '../../../domain/types';
   templateUrl: './sutachu.component.html',
   styleUrls: ['./sutachu.component.css']
 })
-export class SutachuComponent implements OnInit {
+export class SutachuComponent implements OnInit, OnChanges {
   @Input() special: Special;
   @Input() defaultProne: 'true' | 'false';
   @Input() actions: string; // comma separeted Actions
   state: { prone: boolean; tail: 'notail' | 'tail' | 'wrongtail' };
 
-  ngOnChanges() {
+  ngOnChanges(changes: SimpleChanges) {
     this.state = getState(
       this.special,
       this.defaultProne === 'true',

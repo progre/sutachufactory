@@ -1,4 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges
+} from '@angular/core';
+import {
+  Action,
+  Figure,
+  Manufacture,
+  Operation,
+  Special
+} from '../../../domain/types';
 
 @Component({
   selector: 'app-production-line',
@@ -6,10 +19,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./production-line.component.css']
 })
 export class ProductionLineComponent implements OnInit {
+  @Input() beforeManufacturing: Manufacture | null;
+  @Input() manufacturing: Manufacture | null;
+  @Input() afteaManufacture: Manufacture | null;
 
-  constructor() { }
+  ngOnChanges(changes: SimpleChanges) {
+  }
 
   ngOnInit() {
   }
-
 }

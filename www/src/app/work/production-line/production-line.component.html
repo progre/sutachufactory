@@ -1,5 +1,20 @@
 <div class="root">
-  <app-sutachu class="after" special="udon" default-prone="false" actions=""></app-sutachu>
-  <app-sutachu class="active" special="nature" defaultProne="true" actions=""></app-sutachu>
-  <app-sutachu class="before" special="nature" defaultProne="false" actions=""></app-sutachu>
+  <ng-container *ngIf="afteaManufacture">
+    <app-sutachu class="after"
+      special="{{afteaManufacture.figure.special}}"
+      defaultProne="{{afteaManufacture.figure.prone}}"
+      actions="{{afteaManufacture.operation.actions.join(',')}}"></app-sutachu>
+  </ng-container>
+  <ng-container *ngIf="manufacturing">
+    <app-sutachu class="active"
+      special="{{manufacturing.figure.special}}"
+      defaultProne="{{manufacturing.figure.prone}}"
+      actions="{{manufacturing.operation.actions.join(',')}}"></app-sutachu>
+  </ng-container>
+  <ng-container *ngIf="beforeManufacturing">
+    <app-sutachu class="before"
+      special="{{beforeManufacturing.figure.special}}"
+      defaultProne="{{beforeManufacturing.figure.prone}}"
+      actions="{{beforeManufacturing.operation.actions.join(',')}}"></app-sutachu>
+  </ng-container>
 </div>
